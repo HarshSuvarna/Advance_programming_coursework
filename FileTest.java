@@ -2,10 +2,12 @@ public class FileTest {
     public static void main(String[] args) {
         File courseworkpdf = new File("courseworkpdf", 1);
         File courseworkzip = new File("coursework zip file", 2);
+        File courseworimg = new File("coursework img", 2);
 
         Directory coursework = new Directory("coursework");
         coursework.add(courseworkpdf);
         coursework.add(courseworkzip);
+        coursework.add(courseworimg);
 
         Directory unittests = new Directory("unit tests");
         File test1 = new File("unit test 1", 56);

@@ -17,6 +17,7 @@ public class Directory implements Component {
         output.append(prefix.repeat(depth));
         output.append(this.directoryName + ": (count=" + this.getCount() + ", " + "size=" + this.getSize() + ")"
                 + "\n");
+        System.out.println(depth);
         depth++;
         for (Component component : componentList) {
             StringBuilder componentPrefix = new StringBuilder();
