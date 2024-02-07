@@ -4,6 +4,7 @@ public class Directory implements Component {
     private String directoryName;
     private ArrayList<Component> componentList;
     private static int depth = 0;
+    // private int depth = 0;
 
     public Directory(String directoryName) {
         this.directoryName = directoryName;
@@ -12,16 +13,15 @@ public class Directory implements Component {
 
     public String display(String prefix) {
         StringBuilder output = new StringBuilder();
-        // output.append(prefix.repeat(depth));
-        output.append(
-                this.directoryName + ": (count=" + this.getCount() + ", " + "size=" + this.getSize() + ")" + "\n");
-        // System.out.println("\n");
+        output.append(prefix.repeat(depth));
+        output.append(this.directoryName + ": (count=" + this.getCount() + ", " + "size=" + this.getSize() + ")"
+                + "\n");
         depth++;
         for (Component component : componentList) {
             StringBuilder componentPrefix = new StringBuilder();
             componentPrefix.append(prefix.repeat(depth));
             output.append(component instanceof File ? component.display(componentPrefix.toString())
-                    : component.display(prefix)).append("\n");
+                    : component.display(prefix));
         }
         depth--;
         return output.toString();
