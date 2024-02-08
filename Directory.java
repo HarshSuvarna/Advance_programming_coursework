@@ -1,8 +1,9 @@
 import java.util.ArrayList;
+import java.util.List;
 
 public class Directory implements Component {
     private String directoryName;
-    private ArrayList<Component> componentList;
+    private List<Component> componentList;
     private static int depth = 0;
     // private int depth = 0;
 
@@ -16,11 +17,15 @@ public class Directory implements Component {
         output.append(prefix.repeat(depth));
         output.append(this.directoryName + ": (count=" + this.getCount() + ", " + "size=" + this.getSize() + ")\n");
         depth++;
-        for (Component component : componentList) {
+        for (int i = 0; i < componentList.size(); i++) {
             StringBuilder componentPrefix = new StringBuilder();
             componentPrefix.append(prefix.repeat(depth));
-            output.append(component instanceof File ? component.display(componentPrefix.toString())
-                    : component.display(prefix));
+            output.append(
+                    componentList.get(i) instanceof File ? componentList.get(i).display(componentPrefix.toString())
+                            : componentList.get(i).display(prefix));
+            if (i < componentList.size() - 1) {
+                output.append("\n");
+            }
         }
         depth--;
         return output.toString();
