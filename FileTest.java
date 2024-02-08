@@ -20,9 +20,9 @@ public class FileTest {
     // }
 
     public static void main(String[] args) {
-        File settings = new File("settings", 1);
+        File settings = new File("settings", 10);
         File familyHoliday = new File("family-holiday", 201);
-        File portrait = new File("portrait", 756);
+        File portrait = new File("portrait", 134);
         File wallpaper = new File("wallpaper", 421);
         File ringtone = new File("ringtone", 120);
 
@@ -30,7 +30,6 @@ public class FileTest {
         Directory music = new Directory("music");
         Directory pictures = new Directory("pictures");
         Directory personal = new Directory("personal");
-        Directory test = new Directory("TEST");
 
         Directory misc = new Directory("misc");
         root.add(settings);
@@ -38,15 +37,11 @@ public class FileTest {
         root.add(pictures);
         pictures.add(personal);
         pictures.add(misc);
-        personal.add(misc);
         music.add(ringtone);
-        music.add(wallpaper);
         misc.add(wallpaper);
         personal.add(familyHoliday);
         personal.add(portrait);
-        misc.add(test);
-        misc.add(test);
-        test.add(ringtone);
+        pictures.remove(personal);
         System.out.println(root.display("\t"));
         System.out.println(root.search("wallpaper").getName());
     }

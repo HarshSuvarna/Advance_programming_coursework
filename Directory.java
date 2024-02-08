@@ -1,9 +1,8 @@
 import java.util.ArrayList;
-import java.util.List;
 
 public class Directory implements Component {
     private String directoryName;
-    private List<Component> componentList;
+    private ArrayList<Component> componentList;
     private static int depth = 0;
     // private int depth = 0;
 
@@ -65,6 +64,7 @@ public class Directory implements Component {
             Component searchResult = component.search(name);
             if (searchResult != null) {
                 return searchResult;
+
             }
         }
         return null;
