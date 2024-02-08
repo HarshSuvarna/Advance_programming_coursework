@@ -16,8 +16,9 @@ public class FileTest {
     // // coursework.remove(courseworkzip);
     // System.out.print(coursework.display("\t"));
 
-    // System.out.println("\n" + coursework.search("courseworkpdf").getName());
+    // System.out.println(coursework.search("courseworkpdf").getName());
     // }
+
     public static void main(String[] args) {
         File settings = new File("settings", 1);
         File familyHoliday = new File("family-holiday", 201);
@@ -47,7 +48,6 @@ public class FileTest {
         misc.add(test);
         test.add(ringtone);
         System.out.println(root.display("\t"));
-
         System.out.println(root.search("wallpaper").getName());
     }
 }

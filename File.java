@@ -20,7 +20,7 @@ public class File implements Component {
     }
 
     public String display(String prefix) {
-        return prefix + this.fileName + " (" + this.size + ")\n";
+        return prefix + getName() + " (" + this.size + ")\n";
     }
 
     public Component search(String name) {
